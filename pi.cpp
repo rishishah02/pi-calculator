@@ -6,8 +6,8 @@ using namespace std;
 
 double piCalc(int num_sims){
     int insideCircle = 0;
-    double randX;
-    double randY;
+    double x;
+    double y;
     
     // Random Number Generator using this implementation of a uniform random distribution (runif): https://en.cppreference.com/w/cpp/numeric/random/uniform_real_distribution
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
@@ -18,9 +18,9 @@ double piCalc(int num_sims){
     // Check if distance is at most 1 (within the circle)
     // Count number of points inside quadrant and divide by total points (multiply by 4 to account for entire circle)
     for(int i = 0; i<num_sims; ++i){
-        randX = distribution(generator);
-        randY = distribution(generator);
-        if(distanceFromOrigin(randX, randY)<=1){ //Avoided Square Root function in distance formula
+        x = distribution(generator);
+        y = distribution(generator);
+        if(((x*x)+(y*y))<=1){
             insideCircle++;
         }
     }
