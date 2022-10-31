@@ -16,7 +16,7 @@ double piCalc(int num_sims){
     
     // Create two random x and y coordinates in first quadrant
     // Check if distance is at most 1 (within the circle)
-    // Count number of points inside quadrant and divide by total points (multiply by 4 to account for entire circle)
+    // Multiply by 4 to get pi (4*pi/4 = pi)
     for(int i = 0; i<num_sims; ++i){
         x = distribution(generator);
         y = distribution(generator);
